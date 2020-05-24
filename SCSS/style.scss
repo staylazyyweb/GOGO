@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+//colors
+$color_darkshade100: #1f2041;
+$color_darkshade75: #575870;
+$color_darkshade50: #8f8fa0;
+$color_darkshade25: #c7c7cf;
+$color_darkshade5: #f4f4f5;
+$color_purple: #bc9cff;
+$color_green: #6fcf97;
+$purple_gradient: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+
+//fonts
+$font-stack: 'Montserrat', sans-serif;
+
+//text-type
+
+
+//buttons
+%emptyButton {
+    background-color: #fff;
+    border-radius: 22px;
+    padding: 8px 18px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    border: none;
+    font-family: $font-stack;
+    color: $color_purple;
+}
+
+%filledButton {
+    background: $purple_gradient;
+    border-radius: 22px;
+    padding: 10px 20px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    border: none;
+    font-family: $font-stack;
+    color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-stack;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color_darkshade75;
+}
+
+header {
+    padding: 0 140px;
+    color: $color_darkshade50;
+    a:link {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+      
+      a:visited {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+      
+      
+      a:hover {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+      
+      
+      a:active {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: $color_darkshade100;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: $color_darkshade100;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: $color_darkshade100;
+}
+
+.nav {
+    display: flex;
+    max-width: 1440px;
+    height: 70px;
+    margin: 0 auto;
+    
+    align-items: center;
+
+    ul {
+        list-style: none;
+        margin-left: auto;
+        
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+    }
+
+    div.empty-btn-wrapper {
+        margin-right: 20px;
+    }
+
+       
+}
+
+.login-btn {
+    @extend %emptyButton;
+}
+
+.signup-btn {
+    @extend %filledButton;
+}
+
+.empty-btn-wrapper {
+    background: $purple_gradient;
+    border-radius: 22px;
+    padding: 2px;
+}
