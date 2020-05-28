@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 //colors
+
 $color_darkshade100: #1f2041;
 $color_darkshade75: #575870;
 $color_darkshade50: #8f8fa0;
@@ -11,18 +12,18 @@ $color_green: #6fcf97;
 $purple_gradient: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
 
 //fonts
+
 $font-stack: 'Montserrat', sans-serif;
 
 //text-type
 
 
-//breakpoints
-$desktop: 1200px;
-$laptops: 992px;
-$tablets: 768px;
-$phones: 600px;
 
-//buttons
+
+//buttons start
+
+button:focus {outline: none;}
+
 %emptyButton {
     background-color: #fff;
     border-radius: 22px;
@@ -33,6 +34,7 @@ $phones: 600px;
     border: none;
     font-family: $font-stack;
     color: $color_purple;
+    cursor: pointer;
 }
 
 %filledButton {
@@ -45,12 +47,26 @@ $phones: 600px;
     border: none;
     font-family: $font-stack;
     color: #fff;
+    cursor: pointer;
 }
 
+.empty-btn-wrapper {
+    background: $purple_gradient;
+    border-radius: 22px;
+    padding: 2px;
+}
 
-//css code
+//buttons end
 
-//media queries
+
+//media queries start
+
+//breakpoints
+
+$desktop: 1200px;
+$laptops: 992px;
+$tablets: 768px;
+$phones: 600px;
 
 @media only screen and (max-width: $desktop) {
     //header
@@ -58,6 +74,67 @@ $phones: 600px;
         margin: 0 20px !important;
     }
 }
+
+@media only screen and (max-width: 920px) {
+    //header
+    #signup-btn {
+        display: none;
+    }
+
+    header {
+        .nav {
+            div.empty-btn-wrapper {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    //header
+    header {
+        .nav {
+            div.empty-btn-wrapper {
+                display: none;
+            }
+        }
+    }
+
+    header {
+        .nav {
+            ul {
+                li.last {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    //header
+    header {
+        .nav {
+            ul {
+                display: none;
+            }
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    //header
+    #burger-menu {
+        display: none;
+    }
+    
+}
+
+//medua queries end
+
+//basic styling start
 
 * {
     box-sizing: border-box;
@@ -70,30 +147,6 @@ body {
     font-size: 14px;
     line-height: 24px;
     color: $color_darkshade75;
-}
-
-header {
-    font-size: 14px;
-    color: $color_darkshade50;
-    line-height: 17px;
-    font-style: normal;
-    font-weight: normal;
-    a:link {
-        color: $color_darkshade50;
-        text-decoration: none;
-      }
-      a:visited {
-        color: $color_darkshade50;
-        text-decoration: none;
-      }
-      a:hover {
-        color: $color_darkshade50;
-        text-decoration: none;
-      }
-      a:active {
-        color: $color_darkshade50;
-        text-decoration: none;
-      }
 }
 
 h1 {
@@ -117,11 +170,34 @@ h3 {
     color: $color_darkshade100;
 }
 
-#arrowdown {
-    
-    fill: $color_darkshade50;
-}
+// basic styling end
 
+
+// header start
+
+header {
+    font-size: 14px;
+    color: $color_darkshade50;
+    line-height: 17px;
+    font-style: normal;
+    font-weight: normal;
+      a:link {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+      a:visited {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+      a:active {
+        color: $color_darkshade50;
+        text-decoration: none;
+      }
+}
 
 .nav {
     display: flex;
@@ -147,20 +223,39 @@ h3 {
        
 }
 
-.login-btn {
+div.logo {
+    img {
+        margin-top: 5px;
+    }
+}
+
+#arrowdown {
+    
+    fill: $color_darkshade50;
+}
+
+#login-btn {
     @extend %emptyButton;
 }
 
-.signup-btn {
+#signup-btn {
     @extend %filledButton;
 }
 
-.empty-btn-wrapper {
-    background: $purple_gradient;
-    border-radius: 22px;
+#burger-menu {
+    margin-left: auto;
+    height: 30px;
+    width: 30px;
+    border: 2px solid;
+    border-radius: 6px;
     padding: 2px;
+    padding-top: 3px;
 }
 
+//header end
+
+
+//main section background
 .bg {
     width: 100%;
     height: 830px;
