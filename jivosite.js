@@ -1,26 +1,28 @@
+if(! /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/i.test(navigator.userAgent) ) {
 
 /*
 	Коллбек-функция, вызывается сразу после того, как
 	JivoSite окончательно загрузился
 */
-function jivo_onLoadCallback(){
+window.jivo_onLoadCallback = function (){
 	// Создаем элемент DIV для ярлыка
-	window.jivo_cstm_widget = document.createElement('div');
-	jivo_cstm_widget.setAttribute('id', 'jivo_custom_widget');
-	document.body.appendChild(jivo_cstm_widget);
-	
+		window.jivo_cstm_widget = document.createElement('div');
+		jivo_cstm_widget.setAttribute('id', 'jivo_custom_widget');
+		document.body.appendChild(jivo_cstm_widget);
+
 	// Добавляем обработчик клика по ярлыку - чтобы при клике разворачивалось окно
 	jivo_cstm_widget.onclick = function(){
 		jivo_api.open();
 	}
-	
+
 	// Изменяем CSS класс, если есть операторы в онлайне
 	if (jivo_config.chat_mode == "online"){
 		jivo_cstm_widget.setAttribute("class", "jivo_online");
 	}
-	
+
 	// Теперь можно показать ярлык пользователю
 	window.jivo_cstm_widget.style.display='block';
+
 }
 
 /*
@@ -32,9 +34,12 @@ function jivo_onOpen(){
 	// Если чат развернут - скрываем ярлык
 	if (jivo_cstm_widget)
 		jivo_cstm_widget.style.display = 'none';
+
 }
 function jivo_onClose(){
 	// Если чат свернут - показываем ярлык
 	if (jivo_cstm_widget)
 		jivo_cstm_widget.style.display = 'block';
+}
+
 }
