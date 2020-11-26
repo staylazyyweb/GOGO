@@ -86,8 +86,29 @@
     </div>
       <script>
          
-         var jivoLang = document.documentElement.lang
-         console.log(jivoLang);
+         var jivoLang = document.documentElement.lang;
+function loadJivo() {
+    if (jivoLang === 'ru') {
+        var widgetId = '9QKVdk6l4h'; //код английской версии чата
+    } else if (jivoLang === 'es-es') {
+        var widgetId = '3p5dJtyXff'; //код испанской версии чата
+    } else if (jivoLang === 'it-it') {
+        var widgetId = 'ZfK0rhA0Nb';
+    } else if (jivoLang === 'zh-cn') {
+        var widgetId = 'nnNwvAboVD';
+    } else if (jivoLang === 'ar-aa') {
+        var widgetId = 'QkTWjfAkkc';
+    } 
+    
+	var url = '//code.jivosite.com/widget/' + widget_id;
+    var headTag = document.getElementsByTagName("head")[0];
+    var jqTag = document.createElement('script');
+    jqTag.async = true;
+    jqTag.src = url;
+    headTag.appendChild(jqTag);
+};
+
+loadJivo();
       </script>
 </body>
 </html>
